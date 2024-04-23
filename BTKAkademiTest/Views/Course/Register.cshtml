@@ -1,0 +1,77 @@
+﻿@model Candidate
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="display-6">
+    Kurs Kaydı Oluşturma Formu
+</div>
+
+<hr />
+
+<form method="post" asp-controller="Course" asp-action="Register">
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <div class="form-group my-2">
+    <label>Email:</label>
+    <input asp-for="Email" class="form-control" />
+    </div>
+
+    <div class="form-group my-2">
+    <label>Ad:</label>
+    <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="form-group my-2">
+    <label>Soyad:</label>
+    <input asp-for="SurName" class="form-control" />
+    </div>
+
+    <div class="form-group my-2">
+
+    <label style="width:30px;">Yaş:</label>
+
+    <select class="form-control" asp-for="Age" style="width:120px;">
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+    </select>
+    </div>
+    <br />
+    <fieldset>
+        <h6>Lütfen Kayıt Olmak İstediğiniz Kursu Seçiniz:</h6>
+        <hr />
+        <p>
+            <input id="mvc" type="radio" asp-for="SelectedCourse" value="ASP .Net Core MVC" checked />
+            <label>ASP .Net Core MVC</label>
+        </p>
+
+        <p>
+            <input id="api" type="radio" asp-for="SelectedCourse" value="ASP .Net Core API" />
+            <label>ASP .Net Core API</label>
+        </p>
+
+        <p>
+            <input id="sql" type="radio" asp-for="SelectedCourse" value="Microsoft C# .Net & Sql Veritabanı Programlama" />
+            <label>Microsoft C# .Net & Sql Veritabanı Programlama</label>
+        </p>
+
+        <p>
+            <input id="core" type="radio" asp-for="SelectedCourse" value="Microsoft Mvc .Net Core Programlama" />
+            <label>Microsoft Mvc .Net Core Programlama</label>
+        </p>
+    </fieldset>
+
+    <div>
+        <button class="btn btn-success" type="submit" >Kayıt Ol</button>
+        <button class="btn btn-dark" asp-controller="Home" asp-action="Index" type="submit">Ana Sayfaya Dön</button>
+    </div>
+
+</form>
+

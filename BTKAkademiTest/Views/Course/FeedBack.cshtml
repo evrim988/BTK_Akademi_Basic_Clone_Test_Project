@@ -1,0 +1,20 @@
+﻿@model Candidate
+
+@{
+    ViewData["Title"] = "FeedBack";
+}
+
+<div>
+    <h3 class="display-4">Tebrikler @Model.FullName</h3>
+    <hr />
+    <blockquote class="blockquote"> @Model.SelectedCourse Kursuna Kayıt Oldunuz. </blockquote>
+    <p class="lead">Kursumuza Kayıt Başarıyla İşlemi Gerçekleşmiştir.İlginiz için teşekkür ederiz :)</p>
+    <p class="text-muted">Başvuru Tarihi: @Model.RegistiredDate</p>
+    <br />
+    <br />
+    <div class="btn-group">
+        <a class="btn btn-outline-success" asp-action="Index" asp-controller="Course">Kursa Kayıt Olan Kişilerin Listesi</a>
+        <a class="btn btn-success" asp-action="Index" asp-controller="Home">AnaSayfa</a>
+    </div>
+</div>
+
